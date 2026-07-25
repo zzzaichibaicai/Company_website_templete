@@ -93,15 +93,77 @@
       >
         <div class="text">
           <h2>长盛精密机械 · 提供一站式注塑设备解决方案</h2>
-          <p>
-            公司现货储备丰富，机型覆盖全面，涵盖日本、德国、韩国等多个主流品牌。
+          <style>
+  .company-intro-wrap {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #ffffff; /* 适配深色/蓝色背景 */
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
+  }
+  .company-intro-wrap .intro-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #f0f8ff; /* 微微亮色 */
+  }
+  .company-intro-wrap ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+  }
+  .company-intro-wrap ul li {
+    display: flex;
+    margin-bottom: 6px;
+    align-items: baseline;
+    flex-wrap: wrap; /* 关键：保证手机端能自动换行，不被撑破 */
+    gap: 4px;
+  }
+  .company-intro-wrap ul li .label {
+    font-weight: 600;
+    min-width: 90px; /* 固定分类标签宽度，让排版对齐更舒适 */
+    color: #e0f2fe; /* 标签稍微亮一点 */
+    white-space: nowrap;
+  }
+  .company-intro-wrap ul li .content {
+    flex: 1;
+    color: #e6eef5; /* 内容文字颜色 */
+  }
+  /* 针对长内容的特殊样式 */
+  .company-intro-wrap ul li.full-width .content {
+    flex-basis: 100%; /* 较长的内容单独占一行 */
+    margin-top: 4px;
+  }
+</style>
 
-· 日本注塑机： 发那科（FANUC）、住友（SUMITOMO）、日钢（JSW）、日精（NISSEI）、东芝（TOSHIBA）、东洋（TOYO）、沙迪克（SODICK）
-· 德国注塑机： 阿博格（ARBURG）、恩格尔（ENGEL）
-· 韩国注塑机： 宇进（WOOJIN）
-· 机器类型： 全电动注塑机、油压注塑机、立式注塑机、台式注塑机
-· 三机一体及周边设备： 川田（KAWATA）、松井（MATSUI）、斯托达（STODA）等品牌三机一体系统；模温机、碎料机、干燥机等一系列辅机配套，均可一站配齐。
-          </p>
+<div class="company-intro-wrap">
+  <div class="intro-title">公司现货储备丰富，机型覆盖全面，涵盖日本、德国、韩国等多个主流品牌。</div>
+  
+  <ul>
+    <li>
+      <span class="label">🇯🇵 日本注塑机：</span>
+      <span class="content">发那科（FANUC）、住友（SUMITOMO）、日钢（JSW）、日精（NISSEI）、东芝（TOSHIBA）、东洋（TOYO）、沙迪克（SODICK）</span>
+    </li>
+    <li>
+      <span class="label">🇩🇪 德国注塑机：</span>
+      <span class="content">阿博格（ARBURG）、恩格尔（ENGEL）</span>
+    </li>
+    <li>
+      <span class="label">🇰🇷 韩国注塑机：</span>
+      <span class="content">宇进（WOOJIN）</span>
+    </li>
+    <li>
+      <span class="label">⚙️ 机器类型：</span>
+      <span class="content">全电动注塑机、油压注塑机、立式注塑机、台式注塑机</span>
+    </li>
+    <li class="full-width">
+      <span class="label">🔄 周边设备：</span>
+      <span class="content">川田（KAWATA）、松井（MATSUI）、斯托达（STODA）等品牌三机一体系统；模温机、碎料机、干燥机等一系列辅机配套，均可一站配齐。</span>
+    </li>
+  </ul>
+</div>
           <button class="btn btn-outline-light btn-lg" type="button">
             Learn More
           </button>
