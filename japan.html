@@ -347,8 +347,122 @@
       </div>
       <div class="footer-copyright"><p>© 2024 东莞市长盛精密机械有限公司 | 自有仓库，诚信经营</p></div>
     </footer>
-    <!-- ====== 360° 旋转查看器 Modal ====== -->
+       <!-- ====== 360° 旋转查看器 Modal ====== -->
     <div class="viewer-modal" id="viewerModal">
       <span class="viewer-close" onclick="closeViewer()">&times;</span>
       <div class="viewer-container" id="viewerContainer">
-        <
+        <img id="viewerImage" src="" alt="" draggable="false" />
+      </div>
+      <div class="viewer-hint" id="viewerHint">🖱️ 拖拽旋转 &nbsp;|&nbsp; 📱 手指滑动旋转</div>
+      <div class="viewer-info">
+        <h3 id="viewerTitle"></h3>
+        <div class="v-specs" id="viewerSpecs"></div>
+        <p class="v-desc" id="viewerDesc"></p>
+      </div>
+      <div class="viewer-btns">
+        <a href="contact-us.html" class="btn btn-light">📞 询价</a>
+        <button class="btn btn-outline-light" onclick="closeViewer()">✕ 关闭</button>
+      </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/vanilla-zoom.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <script>
+    var machineData = {
+      'fanuc-1':{title:'FANUC S2000i 150B',specs:['150吨','全电动','S2000i'],desc:'已全面调试，运转平稳，适合精密成型。',basePath:'assets/img/machines/japan/fanuc/s2000i-150b/360/',frames:6},
+      'fanuc-2':{title:'FANUC S2000i 300A',specs:['300吨','全电动','S2000i'],desc:'大吨位全电动，节能高效，适合大型模具。',basePath:'assets/img/machines/japan/fanuc/s2000i-300a/360/',frames:6},
+      'fanuc-3':{title:'FANUC Roboshot α-S100iA',specs:['100吨','全电动','Roboshot'],desc:'高精度小型机，电子连接器、医疗件首选。',basePath:'assets/img/machines/japan/fanuc/roboshot-s100ia/360/',frames:6},
+      'fanuc-4':{title:'FANUC α-C100B',specs:['100吨','全电动','Roboshot'],desc:'升级款，射出响应更快，精度更高。',basePath:'assets/img/machines/japan/fanuc/alpha-c100b/360/',frames:6},
+      'fanuc-5':{title:'FANUC S2000i 500C',specs:['500吨','全电动','S2000i'],desc:'超大吨位，汽车件、家电外壳成型。',basePath:'assets/img/machines/japan/fanuc/s2000i-500c/360/',frames:6},
+      'sumitomo-1':{title:'SUMITOMO SE50EV',specs:['50吨','全电动'],desc:'小型精密机，电子元器件首选。',basePath:'assets/img/machines/japan/sumitomo/se50ev/360/',frames:6},
+      'sumitomo-2':{title:'SUMITOMO SE100EV',specs:['100吨','全电动'],desc:'适合精密小件，射出响应快。',basePath:'assets/img/machines/japan/sumitomo/se100ev/360/',frames:6},
+      'sumitomo-3':{title:'SUMITOMO SE180EV',specs:['180吨','全电动'],desc:'低运行时间，原厂参数，节能静音。',basePath:'assets/img/machines/japan/sumitomo/se180ev/360/',frames:6},
+      'sumitomo-4':{title:'SUMITOMO SE350EV',specs:['350吨','全电动'],desc:'大吨位电动，适合汽车配件成型。',basePath:'assets/img/machines/japan/sumitomo/se350ev/360/',frames:6},
+      'jsw-1':{title:'JSW J180AD',specs:['180吨','全电动'],desc:'性价比高，综合性能优秀，应用广泛。',basePath:'assets/img/machines/japan/jsw/j180ad/360/',frames:6},
+      'jsw-2':{title:'JSW J280AD',specs:['280吨','全电动'],desc:'刚完成全检，运行平稳，射出精度高。',basePath:'assets/img/machines/japan/jsw/j280ad/360/',frames:6},
+      'jsw-3':{title:'JSW J450AD',specs:['450吨','全电动'],desc:'大吨位日钢，适合大型家电外壳成型。',basePath:'assets/img/machines/japan/jsw/j450ad/360/',frames:6},
+      'nissei-1':{title:'NISSEI NEX110',specs:['110吨','全电动'],desc:'日精经典机型，适合精密小件成型。',basePath:'assets/img/machines/japan/nissei/nex110/360/',frames:6},
+      'nissei-2':{title:'NISSEI NEX180',specs:['180吨','全电动'],desc:'中吨位全能型，通用性极强。',basePath:'assets/img/machines/japan/nissei/nex180/360/',frames:6},
+      'nissei-3':{title:'NISSEI FNX280',specs:['280吨','全电动'],desc:'日精高端系列，射出速度快，精度高。',basePath:'assets/img/machines/japan/nissei/fnx280/360/',frames:6},
+      'toshiba-1':{title:'TOSHIBA EC100SX',specs:['100吨','全电动'],desc:'东芝经典全电动，稳定耐用，维护方便。',basePath:'assets/img/machines/japan/toshiba/ec100sx/360/',frames:6},
+      'toshiba-2':{title:'TOSHIBA EC250SX',specs:['250吨','全电动'],desc:'中大型全电动，适合高产能需求。',basePath:'assets/img/machines/japan/toshiba/ec250sx/360/',frames:6},
+      'toyo-1':{title:'TOYO Si-130-6s',specs:['130吨','全电动'],desc:'东洋Si系列，精密稳定，性价比优秀。',basePath:'assets/img/machines/japan/toyo/si-130-6s/360/',frames:6},
+      'toyo-2':{title:'TOYO Si-280-6s',specs:['280吨','全电动'],desc:'中大型东洋，家电配件、工业件适用。',basePath:'assets/img/machines/japan/toyo/si-280-6s/360/',frames:6},
+      'sodick-1':{title:'SODICK GL100',specs:['100吨','全电动','V-LINE'],desc:'独特V-LINE结构，超精密成型首选。',basePath:'assets/img/machines/japan/sodick/gl100/360/',frames:6},
+      'sodick-2':{title:'SODICK GL200',specs:['200吨','全电动','V-LINE'],desc:'中大吨位，医疗器械、光学件适用。',basePath:'assets/img/machines/japan/sodick/gl200/360/',frames:6}
+    };
+
+    var cd=null, cf=0, tf=6, isD=false, sX=0;
+    var modal=document.getElementById('viewerModal');
+    var vI=document.getElementById('viewerImage');
+    var vT=document.getElementById('viewerTitle');
+    var vS=document.getElementById('viewerSpecs');
+    var vD=document.getElementById('viewerDesc');
+    var vH=document.getElementById('viewerHint');
+    var vC=document.getElementById('viewerContainer');
+
+    function openViewer(id){
+      cd=machineData[id]; if(!cd) return;
+      tf=cd.frames; cf=0;
+      vT.textContent=cd.title;
+      vS.innerHTML=cd.specs.map(function(s){return '<span>'+s+'</span>';}).join('');
+      vD.textContent=cd.desc;
+      updateFrame();
+      modal.classList.add('active');
+      document.body.style.overflow='hidden';
+      vH.style.display='block';
+    }
+
+    function closeViewer(){
+      modal.classList.remove('active');
+      document.body.style.overflow='';
+    }
+
+    function updateFrame(){
+      vI.src=cd.basePath+cf+'.jpg';
+    }
+
+    vC.addEventListener('mousedown',function(e){
+      isD=true; sX=e.clientX;
+      vI.style.cursor='grabbing'; vH.style.display='none';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove',function(e){
+      if(!isD) return;
+      var d=e.clientX-sX;
+      var f=Math.floor(d/40);
+      if(f!==0){cf=((cf+f)%tf+tf)%tf; updateFrame(); sX=e.clientX;}
+    });
+
+    document.addEventListener('mouseup',function(){
+      if(isD){isD=false; vI.style.cursor='grab';}
+    });
+
+    vC.addEventListener('touchstart',function(e){
+      isD=true; sX=e.touches[0].clientX; vH.style.display='none';
+    });
+
+    vC.addEventListener('touchmove',function(e){
+      if(!isD) return;
+      var d=e.touches[0].clientX-sX;
+      var f=Math.floor(d/30);
+      if(f!==0){cf=((cf+f)%tf+tf)%tf; updateFrame(); sX=e.touches[0].clientX;}
+    });
+
+    vC.addEventListener('touchend',function(){isD=false;});
+
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape') closeViewer();
+    });
+
+    modal.addEventListener('click',function(e){
+      if(e.target===modal) closeViewer();
+    });
+    </script>
+  </body>
+</html>
+
