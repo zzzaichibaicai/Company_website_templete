@@ -32,14 +32,9 @@
       .status-off { background: #95a5a6; color: #fff; }
       .spec-row { margin: 10px 0; }
       .spec-row span { display: inline-block; background: #f0f4f8; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; margin: 2px; }
-      .card-img-top { cursor: pointer; transition: opacity 0.2s; }
-      .card-img-top:hover { opacity: 0.85; }
-      .img-hint {
-        position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
-        background: rgba(0,0,0,0.65); color: #fff; font-size: 0.7rem; padding: 3px 10px;
-        border-radius: 10px; pointer-events: none; z-index: 2;
-      }
-      /* ===== 横向滑动 ===== */
+      .card-img-link { display: block; overflow: hidden; }
+      .card-img-link img { transition: transform 0.3s; }
+      .card-img-link:hover img { transform: scale(1.05); }
       .scroll-row {
         display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 16px;
         padding-bottom: 12px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
@@ -50,38 +45,6 @@
       .scroll-row::-webkit-scrollbar-thumb:hover { background: #999; }
       .scroll-row .clean-card { flex: 0 0 280px; max-width: 280px; }
       @media (max-width: 576px) { .scroll-row .clean-card { flex: 0 0 240px; max-width: 240px; } }
-      /* ===== 360° 查看器 Modal ===== */
-      .viewer-modal {
-        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.92); z-index: 9999; flex-direction: column; align-items: center; justify-content: center;
-      }
-      .viewer-modal.active { display: flex; }
-      .viewer-close {
-        position: absolute; top: 20px; right: 30px; font-size: 2rem; color: #fff;
-        cursor: pointer; z-index: 10; font-weight: 300; line-height: 1;
-      }
-      .viewer-close:hover { color: #e74c3c; }
-      .viewer-container { text-align: center; user-select: none; -webkit-user-select: none; }
-      .viewer-container img {
-        max-width: 90vw; max-height: 60vh; object-fit: contain; border-radius: 8px;
-        cursor: grab; transition: none;
-      }
-      .viewer-container img:active { cursor: grabbing; }
-      .viewer-hint { color: #aaa; font-size: 0.9rem; margin-top: 12px; }
-      .viewer-info { color: #fff; text-align: center; margin-top: 20px; max-width: 500px; }
-      .viewer-info h3 { font-weight: 700; font-size: 1.3rem; margin-bottom: 8px; }
-      .viewer-info .v-specs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 10px 0; }
-      .viewer-info .v-specs span { background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; }
-      .viewer-info .v-desc { color: #bbb; font-size: 0.9rem; }
-      .viewer-btns { margin-top: 18px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-      .viewer-btns .btn { border-radius: 25px; padding: 8px 22px; font-weight: 600; }
-      .viewer-btns .btn-light { background: #fff; color: #333; }
-      .viewer-btns .btn-outline-light:hover { background: #fff; color: #333; }
-      @media (max-width: 768px) {
-        .viewer-container img { max-width: 95vw; max-height: 45vh; }
-        .viewer-info h3 { font-size: 1.1rem; }
-        .viewer-close { top: 15px; right: 20px; font-size: 1.8rem; }
-      }
     </style>
   </head>
   <script src="/assets/js/preloader.js"></script>
@@ -122,18 +85,18 @@
         <div class="container">
           <div class="block-heading">
             <h2 class="text-info">🇯🇵 日本品牌注塑机</h2>
-            <p>发那科 · 住友 · 日钢 · 日精 · 东芝 · 东洋 · 沙迪克 — 点击图片查看360°旋转 ← 左右滑动 →</p>
+            <p>发那科 · 住友 · 日钢 · 日精 · 东芝 · 东洋 · 沙迪克 — 点击图片放大查看 ← 左右滑动 →</p>
           </div>
 
           <!-- ====== 发那科 FANUC ====== -->
           <div class="brand-section">
             <h4 class="brand-title">🔴 发那科 FANUC <span class="count">5台在售</span></h4>
             <div class="scroll-row">
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/s2000i-150b/main.png" alt="FANUC S2000i 150B" onclick="openViewer('fanuc-1')" title="点击查看360°旋转" />
-                <span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/fanuc/s2000i-150b/main.png">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/s2000i-150b/main.png" alt="FANUC S2000i 150B" />
+                </a>
                 <div class="card-body info">
                   <h4 class="card-title">FANUC S2000i 150B</h4>
                   <div class="spec-row"><span>150吨</span><span>全电动</span><span>S2000i</span></div>
@@ -141,11 +104,11 @@
                   <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
                 </div>
               </div>
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/s2000i-300a/main.jpg" alt="FANUC S2000i 300A" onclick="openViewer('fanuc-2')" title="点击查看360°旋转" />
-                <span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/fanuc/s2000i-300a/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/s2000i-300a/main.jpg" alt="FANUC S2000i 300A" />
+                </a>
                 <div class="card-body info">
                   <h4 class="card-title">FANUC S2000i 300A</h4>
                   <div class="spec-row"><span>300吨</span><span>全电动</span><span>S2000i</span></div>
@@ -153,11 +116,11 @@
                   <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
                 </div>
               </div>
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/roboshot-s100ia/main.jpg" alt="FANUC Roboshot α-S100iA" onclick="openViewer('fanuc-3')" title="点击查看360°旋转" />
-                <span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/fanuc/roboshot-s100ia/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/roboshot-s100ia/main.jpg" alt="FANUC Roboshot α-S100iA" />
+                </a>
                 <div class="card-body info">
                   <h4 class="card-title">FANUC Roboshot α-S100iA</h4>
                   <div class="spec-row"><span>100吨</span><span>全电动</span><span>Roboshot</span></div>
@@ -165,11 +128,11 @@
                   <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
                 </div>
               </div>
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/alpha-c100b/main.jpg" alt="FANUC α-C100B" onclick="openViewer('fanuc-4')" title="点击查看360°旋转" />
-                <span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/fanuc/alpha-c100b/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/alpha-c100b/main.jpg" alt="FANUC α-C100B" />
+                </a>
                 <div class="card-body info">
                   <h4 class="card-title">FANUC α-C100B</h4>
                   <div class="spec-row"><span>100吨</span><span>全电动</span><span>Roboshot</span></div>
@@ -177,11 +140,11 @@
                   <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
                 </div>
               </div>
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/s2000i-500c/main.jpg" alt="FANUC S2000i 500C" onclick="openViewer('fanuc-5')" title="点击查看360°旋转" />
-                <span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/fanuc/s2000i-500c/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/fanuc/s2000i-500c/main.jpg" alt="FANUC S2000i 500C" />
+                </a>
                 <div class="card-body info">
                   <h4 class="card-title">FANUC S2000i 500C</h4>
                   <div class="spec-row"><span>500吨</span><span>全电动</span><span>S2000i</span></div>
@@ -189,35 +152,41 @@
                   <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
                 </div>
               </div>
-
             </div>
           </div>
+
           <!-- ====== 住友 SUMITOMO ====== -->
           <div class="brand-section">
             <h4 class="brand-title">🔵 住友 SUMITOMO <span class="count">4台在售</span></h4>
             <div class="scroll-row">
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sumitomo/se50ev/main.jpg" alt="SUMITOMO SE50EV" onclick="openViewer('sumitomo-1')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/sumitomo/se50ev/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sumitomo/se50ev/main.jpg" alt="SUMITOMO SE50EV" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">SUMITOMO SE50EV</h4><div class="spec-row"><span>50吨</span><span>全电动</span></div><p class="card-text">小型精密机，电子元器件首选。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sumitomo/se100ev/main.jpg" alt="SUMITOMO SE100EV" onclick="openViewer('sumitomo-2')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/sumitomo/se100ev/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sumitomo/se100ev/main.jpg" alt="SUMITOMO SE100EV" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">SUMITOMO SE100EV</h4><div class="spec-row"><span>100吨</span><span>全电动</span></div><p class="card-text">适合精密小件，射出响应快。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sumitomo/se180ev/main.jpg" alt="SUMITOMO SE180EV" onclick="openViewer('sumitomo-3')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/sumitomo/se180ev/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sumitomo/se180ev/main.jpg" alt="SUMITOMO SE180EV" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">SUMITOMO SE180EV</h4><div class="spec-row"><span>180吨</span><span>全电动</span></div><p class="card-text">低运行时间，原厂参数，节能静音。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sumitomo/se350ev/main.jpg" alt="SUMITOMO SE350EV" onclick="openViewer('sumitomo-4')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/sumitomo/se350ev/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sumitomo/se350ev/main.jpg" alt="SUMITOMO SE350EV" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">SUMITOMO SE350EV</h4><div class="spec-row"><span>350吨</span><span>全电动</span></div><p class="card-text">大吨位电动，适合汽车配件成型。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
-
             </div>
           </div>
 
@@ -225,23 +194,27 @@
           <div class="brand-section">
             <h4 class="brand-title">🟢 日钢 JSW <span class="count">3台在售</span></h4>
             <div class="scroll-row">
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/jsw/j180ad/main.jpg" alt="JSW J180AD" onclick="openViewer('jsw-1')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/jsw/j180ad/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/jsw/j180ad/main.jpg" alt="JSW J180AD" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">JSW J180AD</h4><div class="spec-row"><span>180吨</span><span>全电动</span></div><p class="card-text">性价比高，综合性能优秀，应用广泛。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/jsw/j280ad/main.jpg" alt="JSW J280AD" onclick="openViewer('jsw-2')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/jsw/j280ad/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/jsw/j280ad/main.jpg" alt="JSW J280AD" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">JSW J280AD</h4><div class="spec-row"><span>280吨</span><span>全电动</span></div><p class="card-text">刚完成全检，运行平稳，射出精度高。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/jsw/j450ad/main.jpg" alt="JSW J450AD" onclick="openViewer('jsw-3')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/jsw/j450ad/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/jsw/j450ad/main.jpg" alt="JSW J450AD" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">JSW J450AD</h4><div class="spec-row"><span>450吨</span><span>全电动</span></div><p class="card-text">大吨位日钢，适合大型家电外壳成型。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
-
             </div>
           </div>
 
@@ -249,23 +222,27 @@
           <div class="brand-section">
             <h4 class="brand-title">🟡 日精 NISSEI <span class="count">3台在售</span></h4>
             <div class="scroll-row">
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/nissei/nex110/main.jpg" alt="NISSEI NEX110" onclick="openViewer('nissei-1')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/nissei/nex110/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/nissei/nex110/main.jpg" alt="NISSEI NEX110" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">NISSEI NEX110</h4><div class="spec-row"><span>110吨</span><span>全电动</span></div><p class="card-text">日精经典机型，适合精密小件成型。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/nissei/nex180/main.jpg" alt="NISSEI NEX180" onclick="openViewer('nissei-2')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/nissei/nex180/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/nissei/nex180/main.jpg" alt="NISSEI NEX180" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">NISSEI NEX180</h4><div class="spec-row"><span>180吨</span><span>全电动</span></div><p class="card-text">中吨位全能型，通用性极强。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/nissei/fnx280/main.jpg" alt="NISSEI FNX280" onclick="openViewer('nissei-3')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/nissei/fnx280/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/nissei/fnx280/main.jpg" alt="NISSEI FNX280" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">NISSEI FNX280</h4><div class="spec-row"><span>280吨</span><span>全电动</span></div><p class="card-text">日精高端系列，射出速度快，精度高。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
-
             </div>
           </div>
 
@@ -273,18 +250,20 @@
           <div class="brand-section">
             <h4 class="brand-title">🟣 东芝 TOSHIBA <span class="count">2台在售</span></h4>
             <div class="scroll-row">
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/toshiba/ec100sx/main.jpg" alt="TOSHIBA EC100SX" onclick="openViewer('toshiba-1')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/toshiba/ec100sx/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/toshiba/ec100sx/main.jpg" alt="TOSHIBA EC100SX" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">TOSHIBA EC100SX</h4><div class="spec-row"><span>100吨</span><span>全电动</span></div><p class="card-text">东芝经典全电动，稳定耐用，维护方便。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/toshiba/ec250sx/main.jpg" alt="TOSHIBA EC250SX" onclick="openViewer('toshiba-2')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/toshiba/ec250sx/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/toshiba/ec250sx/main.jpg" alt="TOSHIBA EC250SX" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">TOSHIBA EC250SX</h4><div class="spec-row"><span>250吨</span><span>全电动</span></div><p class="card-text">中大型全电动，适合高产能需求。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
-
             </div>
           </div>
 
@@ -292,18 +271,20 @@
           <div class="brand-section">
             <h4 class="brand-title">🟤 东洋 TOYO <span class="count">2台在售</span></h4>
             <div class="scroll-row">
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/toyo/si-130-6s/main.jpg" alt="TOYO Si-130-6s" onclick="openViewer('toyo-1')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/toyo/si-130-6s/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/toyo/si-130-6s/main.jpg" alt="TOYO Si-130-6s" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">TOYO Si-130-6s</h4><div class="spec-row"><span>130吨</span><span>全电动</span></div><p class="card-text">东洋Si系列，精密稳定，性价比优秀。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/toyo/si-280-6s/main.jpg" alt="TOYO Si-280-6s" onclick="openViewer('toyo-2')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/toyo/si-280-6s/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/toyo/si-280-6s/main.jpg" alt="TOYO Si-280-6s" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">TOYO Si-280-6s</h4><div class="spec-row"><span>280吨</span><span>全电动</span></div><p class="card-text">中大型东洋，家电配件、工业件适用。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
-
             </div>
           </div>
 
@@ -311,18 +292,20 @@
           <div class="brand-section">
             <h4 class="brand-title">🔴 沙迪克 SODICK <span class="count">2台在售</span></h4>
             <div class="scroll-row">
-
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sodick/gl100/main.jpg" alt="SODICK GL100" onclick="openViewer('sodick-1')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/sodick/gl100/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sodick/gl100/main.jpg" alt="SODICK GL100" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">SODICK GL100</h4><div class="spec-row"><span>100吨</span><span>全电动</span><span>V-LINE</span></div><p class="card-text">独特V-LINE结构，超精密成型首选。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sodick/gl200/main.jpg" alt="SODICK GL200" onclick="openViewer('sodick-2')" title="点击查看360°旋转" /><span class="img-hint">🔄 点击旋转查看</span>
+                <a class="card-img-link" href="assets/img/machines/japan/sodick/gl200/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/japan/sodick/gl200/main.jpg" alt="SODICK GL200" />
+                </a>
                 <div class="card-body info"><h4 class="card-title">SODICK GL200</h4><div class="spec-row"><span>200吨</span><span>全电动</span><span>V-LINE</span></div><p class="card-text">中大吨位，医疗器械、光学件适用。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
-
             </div>
           </div>
 
@@ -347,122 +330,19 @@
       </div>
       <div class="footer-copyright"><p>© 2024 东莞市长盛精密机械有限公司 | 自有仓库，诚信经营</p></div>
     </footer>
-       <!-- ====== 360° 旋转查看器 Modal ====== -->
-    <div class="viewer-modal" id="viewerModal">
-      <span class="viewer-close" onclick="closeViewer()">&times;</span>
-      <div class="viewer-container" id="viewerContainer">
-        <img id="viewerImage" src="" alt="" draggable="false" />
-      </div>
-      <div class="viewer-hint" id="viewerHint">🖱️ 拖拽旋转 &nbsp;|&nbsp; 📱 手指滑动旋转</div>
-      <div class="viewer-info">
-        <h3 id="viewerTitle"></h3>
-        <div class="v-specs" id="viewerSpecs"></div>
-        <p class="v-desc" id="viewerDesc"></p>
-      </div>
-      <div class="viewer-btns">
-        <a href="contact-us.html" class="btn btn-light">📞 询价</a>
-        <button class="btn btn-outline-light" onclick="closeViewer()">✕ 关闭</button>
-      </div>
-    </div>
 
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
-
     <script>
-    var machineData = {
-      'fanuc-1':{title:'FANUC S2000i 150B',specs:['150吨','全电动','S2000i'],desc:'已全面调试，运转平稳，适合精密成型。',basePath:'assets/img/machines/japan/fanuc/s2000i-150b/360/',frames:6},
-      'fanuc-2':{title:'FANUC S2000i 300A',specs:['300吨','全电动','S2000i'],desc:'大吨位全电动，节能高效，适合大型模具。',basePath:'assets/img/machines/japan/fanuc/s2000i-300a/360/',frames:6},
-      'fanuc-3':{title:'FANUC Roboshot α-S100iA',specs:['100吨','全电动','Roboshot'],desc:'高精度小型机，电子连接器、医疗件首选。',basePath:'assets/img/machines/japan/fanuc/roboshot-s100ia/360/',frames:6},
-      'fanuc-4':{title:'FANUC α-C100B',specs:['100吨','全电动','Roboshot'],desc:'升级款，射出响应更快，精度更高。',basePath:'assets/img/machines/japan/fanuc/alpha-c100b/360/',frames:6},
-      'fanuc-5':{title:'FANUC S2000i 500C',specs:['500吨','全电动','S2000i'],desc:'超大吨位，汽车件、家电外壳成型。',basePath:'assets/img/machines/japan/fanuc/s2000i-500c/360/',frames:6},
-      'sumitomo-1':{title:'SUMITOMO SE50EV',specs:['50吨','全电动'],desc:'小型精密机，电子元器件首选。',basePath:'assets/img/machines/japan/sumitomo/se50ev/360/',frames:6},
-      'sumitomo-2':{title:'SUMITOMO SE100EV',specs:['100吨','全电动'],desc:'适合精密小件，射出响应快。',basePath:'assets/img/machines/japan/sumitomo/se100ev/360/',frames:6},
-      'sumitomo-3':{title:'SUMITOMO SE180EV',specs:['180吨','全电动'],desc:'低运行时间，原厂参数，节能静音。',basePath:'assets/img/machines/japan/sumitomo/se180ev/360/',frames:6},
-      'sumitomo-4':{title:'SUMITOMO SE350EV',specs:['350吨','全电动'],desc:'大吨位电动，适合汽车配件成型。',basePath:'assets/img/machines/japan/sumitomo/se350ev/360/',frames:6},
-      'jsw-1':{title:'JSW J180AD',specs:['180吨','全电动'],desc:'性价比高，综合性能优秀，应用广泛。',basePath:'assets/img/machines/japan/jsw/j180ad/360/',frames:6},
-      'jsw-2':{title:'JSW J280AD',specs:['280吨','全电动'],desc:'刚完成全检，运行平稳，射出精度高。',basePath:'assets/img/machines/japan/jsw/j280ad/360/',frames:6},
-      'jsw-3':{title:'JSW J450AD',specs:['450吨','全电动'],desc:'大吨位日钢，适合大型家电外壳成型。',basePath:'assets/img/machines/japan/jsw/j450ad/360/',frames:6},
-      'nissei-1':{title:'NISSEI NEX110',specs:['110吨','全电动'],desc:'日精经典机型，适合精密小件成型。',basePath:'assets/img/machines/japan/nissei/nex110/360/',frames:6},
-      'nissei-2':{title:'NISSEI NEX180',specs:['180吨','全电动'],desc:'中吨位全能型，通用性极强。',basePath:'assets/img/machines/japan/nissei/nex180/360/',frames:6},
-      'nissei-3':{title:'NISSEI FNX280',specs:['280吨','全电动'],desc:'日精高端系列，射出速度快，精度高。',basePath:'assets/img/machines/japan/nissei/fnx280/360/',frames:6},
-      'toshiba-1':{title:'TOSHIBA EC100SX',specs:['100吨','全电动'],desc:'东芝经典全电动，稳定耐用，维护方便。',basePath:'assets/img/machines/japan/toshiba/ec100sx/360/',frames:6},
-      'toshiba-2':{title:'TOSHIBA EC250SX',specs:['250吨','全电动'],desc:'中大型全电动，适合高产能需求。',basePath:'assets/img/machines/japan/toshiba/ec250sx/360/',frames:6},
-      'toyo-1':{title:'TOYO Si-130-6s',specs:['130吨','全电动'],desc:'东洋Si系列，精密稳定，性价比优秀。',basePath:'assets/img/machines/japan/toyo/si-130-6s/360/',frames:6},
-      'toyo-2':{title:'TOYO Si-280-6s',specs:['280吨','全电动'],desc:'中大型东洋，家电配件、工业件适用。',basePath:'assets/img/machines/japan/toyo/si-280-6s/360/',frames:6},
-      'sodick-1':{title:'SODICK GL100',specs:['100吨','全电动','V-LINE'],desc:'独特V-LINE结构，超精密成型首选。',basePath:'assets/img/machines/japan/sodick/gl100/360/',frames:6},
-      'sodick-2':{title:'SODICK GL200',specs:['200吨','全电动','V-LINE'],desc:'中大吨位，医疗器械、光学件适用。',basePath:'assets/img/machines/japan/sodick/gl200/360/',frames:6}
-    };
-
-    var cd=null, cf=0, tf=6, isD=false, sX=0;
-    var modal=document.getElementById('viewerModal');
-    var vI=document.getElementById('viewerImage');
-    var vT=document.getElementById('viewerTitle');
-    var vS=document.getElementById('viewerSpecs');
-    var vD=document.getElementById('viewerDesc');
-    var vH=document.getElementById('viewerHint');
-    var vC=document.getElementById('viewerContainer');
-
-    function openViewer(id){
-      cd=machineData[id]; if(!cd) return;
-      tf=cd.frames; cf=0;
-      vT.textContent=cd.title;
-      vS.innerHTML=cd.specs.map(function(s){return '<span>'+s+'</span>';}).join('');
-      vD.textContent=cd.desc;
-      updateFrame();
-      modal.classList.add('active');
-      document.body.style.overflow='hidden';
-      vH.style.display='block';
-    }
-
-    function closeViewer(){
-      modal.classList.remove('active');
-      document.body.style.overflow='';
-    }
-
-    function updateFrame(){
-      vI.src=cd.basePath+cf+'.png';
-    }
-
-    vC.addEventListener('mousedown',function(e){
-      isD=true; sX=e.clientX;
-      vI.style.cursor='grabbing'; vH.style.display='none';
-      e.preventDefault();
-    });
-
-    document.addEventListener('mousemove',function(e){
-      if(!isD) return;
-      var d=e.clientX-sX;
-      var f=Math.floor(d/40);
-      if(f!==0){cf=((cf+f)%tf+tf)%tf; updateFrame(); sX=e.clientX;}
-    });
-
-    document.addEventListener('mouseup',function(){
-      if(isD){isD=false; vI.style.cursor='grab';}
-    });
-
-    vC.addEventListener('touchstart',function(e){
-      isD=true; sX=e.touches[0].clientX; vH.style.display='none';
-    });
-
-    vC.addEventListener('touchmove',function(e){
-      if(!isD) return;
-      var d=e.touches[0].clientX-sX;
-      var f=Math.floor(d/30);
-      if(f!==0){cf=((cf+f)%tf+tf)%tf; updateFrame(); sX=e.touches[0].clientX;}
-    });
-
-    vC.addEventListener('touchend',function(){isD=false;});
-
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape') closeViewer();
-    });
-
-    modal.addEventListener('click',function(e){
-      if(e.target===modal) closeViewer();
-    });
+      /* 激活点击放大：每个品牌的横滑区域独立 */
+      document.querySelectorAll('.scroll-row').forEach(function(row) {
+        baguetteBox.run(row, {
+          captions: false,
+          animation: 'slideIn'
+        });
+      });
     </script>
   </body>
 </html>
-
