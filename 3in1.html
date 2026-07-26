@@ -31,14 +31,15 @@
       .status-on { background: #27ae60; color: #fff; }
       .spec-row { margin: 10px 0; }
       .spec-row span { display: inline-block; background: #e8f8e8; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; margin: 2px; }
+      .card-img-link { display: block; overflow: hidden; }
+      .card-img-link img { transition: transform 0.3s; }
+      .card-img-link:hover img { transform: scale(1.05); }
       .desc-box {
         background: #f8fdf5; border-left: 4px solid #27ae60; padding: 20px 25px;
         border-radius: 8px; margin-bottom: 35px;
       }
       .desc-box h5 { color: #27ae60; font-weight: 700; }
       .desc-box p { margin: 0; color: #555; font-size: 0.9rem; }
-
-      /* ===== 横向滑动 ===== */
       .scroll-row {
         display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 16px;
         padding-bottom: 12px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
@@ -48,13 +49,10 @@
       .scroll-row::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
       .scroll-row::-webkit-scrollbar-thumb:hover { background: #999; }
       .scroll-row .clean-card { flex: 0 0 280px; max-width: 280px; }
-      @media (max-width: 576px) {
-        .scroll-row .clean-card { flex: 0 0 240px; max-width: 240px; }
-      }
+      @media (max-width: 576px) { .scroll-row .clean-card { flex: 0 0 240px; max-width: 240px; } }
     </style>
   </head>
   <script src="/assets/js/preloader.js"></script>
-
   <body>
     <div class="loader-wrapper">
       <div class="loader"></div>
@@ -92,7 +90,7 @@
         <div class="container">
           <div class="block-heading">
             <h2 class="text-info">⚙️ 三机一体</h2>
-            <p>除湿 · 干燥 · 送料 三合一 — 川田 · 松井 · 斯托达 ← 左右滑动查看 →</p>
+            <p>除湿 · 干燥 · 送料 三合一 — 川田 · 松井 · 斯托达 — 点击图片放大查看 ← 左右滑动 →</p>
           </div>
 
           <div class="desc-box">
@@ -106,33 +104,24 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">川田 Kawata KDG-50</h4>
-                  <div class="spec-row"><span>50kg/h</span><span>除湿干燥</span><span>日本原装</span></div>
-                  <p class="card-text">小型三机一体，适合精密小件注塑产线，运行安静稳定。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/3in1/kawata/kdg-50/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/3in1/kawata/kdg-50/main.jpg" alt="川田 Kawata KDG-50" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">川田 Kawata KDG-50</h4><div class="spec-row"><span>50kg/h</span><span>除湿干燥</span><span>日本原装</span></div><p class="card-text">小型三机一体，适合精密小件注塑产线，运行安静稳定。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">川田 Kawata KDG-100</h4>
-                  <div class="spec-row"><span>100kg/h</span><span>除湿干燥</span><span>日本原装</span></div>
-                  <p class="card-text">中型三机一体，适合中等产能注塑车间，性价比高。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/3in1/kawata/kdg-100/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/3in1/kawata/kdg-100/main.jpg" alt="川田 Kawata KDG-100" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">川田 Kawata KDG-100</h4><div class="spec-row"><span>100kg/h</span><span>除湿干燥</span><span>日本原装</span></div><p class="card-text">中型三机一体，适合中等产能注塑车间，性价比高。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">川田 Kawata KDG-200</h4>
-                  <div class="spec-row"><span>200kg/h</span><span>除湿干燥</span><span>日本原装</span></div>
-                  <p class="card-text">大型三机一体，适合大批量生产，除湿效果优秀。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/3in1/kawata/kdg-200/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/3in1/kawata/kdg-200/main.jpg" alt="川田 Kawata KDG-200" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">川田 Kawata KDG-200</h4><div class="spec-row"><span>200kg/h</span><span>除湿干燥</span><span>日本原装</span></div><p class="card-text">大型三机一体，适合大批量生产，除湿效果优秀。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -143,33 +132,24 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">松井 Matsui MJ3-60</h4>
-                  <div class="spec-row"><span>60kg/h</span><span>除湿干燥</span><span>日本原装</span></div>
-                  <p class="card-text">松井经典机型，露点控制精准，适合工程塑料干燥。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/3in1/matsui/mj3-60/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/3in1/matsui/mj3-60/main.jpg" alt="松井 Matsui MJ3-60" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">松井 Matsui MJ3-60</h4><div class="spec-row"><span>60kg/h</span><span>除湿干燥</span><span>日本原装</span></div><p class="card-text">松井经典机型，露点控制精准，适合工程塑料干燥。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">松井 Matsui MJ3-120</h4>
-                  <div class="spec-row"><span>120kg/h</span><span>除湿干燥</span><span>日本原装</span></div>
-                  <p class="card-text">中大型松井，处理能力强劲，运行稳定可靠。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/3in1/matsui/mj3-120/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/3in1/matsui/mj3-120/main.jpg" alt="松井 Matsui MJ3-120" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">松井 Matsui MJ3-120</h4><div class="spec-row"><span>120kg/h</span><span>除湿干燥</span><span>日本原装</span></div><p class="card-text">中大型松井，处理能力强劲，运行稳定可靠。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">松井 Matsui MJ3-250</h4>
-                  <div class="spec-row"><span>250kg/h</span><span>除湿干燥</span><span>日本原装</span></div>
-                  <p class="card-text">大产能松井，适合汽车件、家电等大批量产线。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/3in1/matsui/mj3-250/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/3in1/matsui/mj3-250/main.jpg" alt="松井 Matsui MJ3-250" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">松井 Matsui MJ3-250</h4><div class="spec-row"><span>250kg/h</span><span>除湿干燥</span><span>日本原装</span></div><p class="card-text">大产能松井，适合汽车件、家电等大批量产线。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -180,23 +160,17 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">斯托达 Stolz SD-80</h4>
-                  <div class="spec-row"><span>80kg/h</span><span>除湿干燥</span><span>日本原装</span></div>
-                  <p class="card-text">斯托达中型机，运行稳定，维护简便。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/3in1/stolz/sd-80/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/3in1/stolz/sd-80/main.jpg" alt="斯托达 Stolz SD-80" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">斯托达 Stolz SD-80</h4><div class="spec-row"><span>80kg/h</span><span>除湿干燥</span><span>日本原装</span></div><p class="card-text">斯托达中型机，运行稳定，维护简便。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">斯托达 Stolz SD-150</h4>
-                  <div class="spec-row"><span>150kg/h</span><span>除湿干燥</span><span>日本原装</span></div>
-                  <p class="card-text">大处理量，适合高产能注塑车间配套使用。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/3in1/stolz/sd-150/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/3in1/stolz/sd-150/main.jpg" alt="斯托达 Stolz SD-150" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">斯托达 Stolz SD-150</h4><div class="spec-row"><span>150kg/h</span><span>除湿干燥</span><span>日本原装</span></div><p class="card-text">大处理量，适合高产能注塑车间配套使用。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -227,5 +201,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+      document.querySelectorAll('.scroll-row').forEach(function(row) {
+        baguetteBox.run(row, { captions: false, animation: 'slideIn' });
+      });
+    </script>
   </body>
 </html>
