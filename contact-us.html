@@ -124,32 +124,45 @@
             </div>
           </div>
 
-          <!-- 留言表单 -->
-          <form>
-            <div class="mb-3">
-              <label class="form-label" for="name">姓名 / 公司名称 *</label>
-              <input class="form-control" type="text" id="name" name="name" placeholder="请输入您的姓名或公司名称" required />
+                    <!-- 联系方式详情 -->
+          <div class="row mt-4">
+            <div class="col-lg-6">
+              <div class="highlight-box">
+                <strong>📱 手机/微信：</strong>
+                <p style="font-size:1.2rem; margin:5px 0;">请填写您的手机号码</p>
+                <small class="text-muted">直接致电或添加微信，获取最快回复</small>
+              </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="phone">联系电话 *</label>
-              <input class="form-control" type="text" id="phone" name="phone" placeholder="请输入您的联系电话" required />
+            <div class="col-lg-6">
+              <div class="highlight-box">
+                <strong>☎️ 固话：</strong>
+                <p style="font-size:1.2rem; margin:5px 0;">请填写您的座机号码</p>
+                <small class="text-muted">工作日 8:00-18:00 在线</small>
+              </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="email">电子邮箱</label>
-              <input class="form-control" type="email" id="email" name="email" placeholder="请输入您的电子邮箱" />
+            <div class="col-lg-6">
+              <div class="highlight-box">
+                <strong>📧 邮箱：</strong>
+                <p style="font-size:1.1rem; margin:5px 0;">请填写您的邮箱地址</p>
+                <small class="text-muted">发送邮件索取机器清单</small>
+              </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="subject">需求机型 / 品牌</label>
-              <input class="form-control" type="text" id="subject" name="subject" placeholder="例如：发那科150吨全电动" />
+            <div class="col-lg-6">
+              <div class="highlight-box">
+                <strong>📍 地址：</strong>
+                <p style="font-size:1.1rem; margin:5px 0;">广东省东莞市</p>
+                <small class="text-muted">来厂前请提前致电预约</small>
+              </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="message">留言内容 *</label>
-              <textarea class="form-control" id="message" name="message" rows="5" placeholder="请描述您的需求，例如：需要多大吨位、什么品牌、预算范围等" required></textarea>
-            </div>
-            <div class="mb-3">
-              <button class="btn btn-primary btn-lg px-5" type="submit">发送留言</button>
-            </div>
-          </form>
+          </div>
+
+          <!-- 微信二维码（可选） -->
+          <div class="text-center mt-4 p-4 bg-white rounded-3">
+            <p class="fw-bold mb-3">📲 扫码添加微信，在线咨询</p>
+            <img src="assets/img/avatars/wechat-qr.png" alt="微信二维码" style="width:160px; height:160px; object-fit:cover; border:1px solid #eee; border-radius:8px;" />
+            <p class="text-muted mt-2" style="font-size:0.8rem;">（请将微信二维码图片替换到 assets/img/avatars/wechat-qr.png）</p>
+          </div>
+
 
         </div>
       </section>
