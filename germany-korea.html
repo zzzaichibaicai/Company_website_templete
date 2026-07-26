@@ -32,8 +32,9 @@
       .status-off { background: #95a5a6; color: #fff; }
       .spec-row { margin: 10px 0; }
       .spec-row span { display: inline-block; background: #f0f4f8; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; margin: 2px; }
-
-      /* ===== 横向滑动 ===== */
+      .card-img-link { display: block; overflow: hidden; }
+      .card-img-link img { transition: transform 0.3s; }
+      .card-img-link:hover img { transform: scale(1.05); }
       .scroll-row {
         display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 16px;
         padding-bottom: 12px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
@@ -43,13 +44,10 @@
       .scroll-row::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
       .scroll-row::-webkit-scrollbar-thumb:hover { background: #999; }
       .scroll-row .clean-card { flex: 0 0 280px; max-width: 280px; }
-      @media (max-width: 576px) {
-        .scroll-row .clean-card { flex: 0 0 240px; max-width: 240px; }
-      }
+      @media (max-width: 576px) { .scroll-row .clean-card { flex: 0 0 240px; max-width: 240px; } }
     </style>
   </head>
   <script src="/assets/js/preloader.js"></script>
-
   <body>
     <div class="loader-wrapper">
       <div class="loader"></div>
@@ -87,7 +85,7 @@
         <div class="container">
           <div class="block-heading">
             <h2 class="text-info">🇩🇪🇰🇷 德国·韩国注塑机</h2>
-            <p>阿博格 · 恩格尔 · 宇进 — 德系品质与韩系性价比兼得 ← 左右滑动查看 →</p>
+            <p>阿博格 · 恩格尔 · 宇进 — 点击图片放大查看 ← 左右滑动 →</p>
           </div>
 
           <!-- ====== 阿博格 ARBURG ====== -->
@@ -96,33 +94,24 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">ARBURG Allrounder 420C</h4>
-                  <div class="spec-row"><span>100吨</span><span>全电动</span><span>Golden Edition</span></div>
-                  <p class="card-text">德国原装，精度极高，适合精密成型。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/germany/arburg/allrounder-420c/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/germany/arburg/allrounder-420c/main.jpg" alt="ARBURG Allrounder 420C" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">ARBURG Allrounder 420C</h4><div class="spec-row"><span>100吨</span><span>全电动</span><span>Golden Edition</span></div><p class="card-text">德国原装，精度极高，适合精密成型。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">ARBURG Allrounder 570C</h4>
-                  <div class="spec-row"><span>200吨</span><span>全电动</span><span>Golden Edition</span></div>
-                  <p class="card-text">中大型阿博格，稳定耐用，应用广泛。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/germany/arburg/allrounder-570c/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/germany/arburg/allrounder-570c/main.jpg" alt="ARBURG Allrounder 570C" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">ARBURG Allrounder 570C</h4><div class="spec-row"><span>200吨</span><span>全电动</span><span>Golden Edition</span></div><p class="card-text">中大型阿博格，稳定耐用，应用广泛。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-off">已售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">ARBURG Allrounder 320C</h4>
-                  <div class="spec-row"><span>60吨</span><span>全电动</span></div>
-                  <p class="card-text">已售出，类似机型可联系我们咨询。</p>
-                  <a href="contact-us.html" class="btn btn-outline-secondary btn-sm">咨询同类</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/germany/arburg/allrounder-320c/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/germany/arburg/allrounder-320c/main.jpg" alt="ARBURG Allrounder 320C" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">ARBURG Allrounder 320C</h4><div class="spec-row"><span>60吨</span><span>全电动</span></div><p class="card-text">已售出，类似机型可联系我们咨询。</p><a href="contact-us.html" class="btn btn-outline-secondary btn-sm">咨询同类</a></div>
               </div>
             </div>
           </div>
@@ -133,23 +122,17 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">ENGEL Victory 500/120</h4>
-                  <div class="spec-row"><span>120吨</span><span>全电动</span></div>
-                  <p class="card-text">无拉杆设计，模具空间大，换模快捷。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/germany/engel/victory-500-120/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/germany/engel/victory-500-120/main.jpg" alt="ENGEL Victory 500/120" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">ENGEL Victory 500/120</h4><div class="spec-row"><span>120吨</span><span>全电动</span></div><p class="card-text">无拉杆设计，模具空间大，换模快捷。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">ENGEL E-mac 200/100</h4>
-                  <div class="spec-row"><span>200吨</span><span>全电动</span></div>
-                  <p class="card-text">恩格尔经济型全电动，性价比高。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/germany/engel/e-mac-200-100/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/germany/engel/e-mac-200-100/main.jpg" alt="ENGEL E-mac 200/100" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">ENGEL E-mac 200/100</h4><div class="spec-row"><span>200吨</span><span>全电动</span></div><p class="card-text">恩格尔经济型全电动，性价比高。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -160,33 +143,24 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">LS THE-ONE 100</h4>
-                  <div class="spec-row"><span>100吨</span><span>全电动</span></div>
-                  <p class="card-text">宇进新款，精度和速度表现优异。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/korea/ls/the-one-100/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/korea/ls/the-one-100/main.jpg" alt="LS THE-ONE 100" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">LS THE-ONE 100</h4><div class="spec-row"><span>100吨</span><span>全电动</span></div><p class="card-text">宇进新款，精度和速度表现优异。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">LS MT150-Ⅱ</h4>
-                  <div class="spec-row"><span>150吨</span><span>全电动</span></div>
-                  <p class="card-text">韩系性价比之选，维护成本低。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/korea/ls/mt150-2/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/korea/ls/mt150-2/main.jpg" alt="LS MT150-Ⅱ" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">LS MT150-Ⅱ</h4><div class="spec-row"><span>150吨</span><span>全电动</span></div><p class="card-text">韩系性价比之选，维护成本低。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">LS MT250-Ⅱ</h4>
-                  <div class="spec-row"><span>250吨</span><span>全电动</span></div>
-                  <p class="card-text">中吨位全能，运行稳定，通用性强。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/korea/ls/mt250-2/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/korea/ls/mt250-2/main.jpg" alt="LS MT250-Ⅱ" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">LS MT250-Ⅱ</h4><div class="spec-row"><span>250吨</span><span>全电动</span></div><p class="card-text">中吨位全能，运行稳定，通用性强。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -217,5 +191,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+      document.querySelectorAll('.scroll-row').forEach(function(row) {
+        baguetteBox.run(row, { captions: false, animation: 'slideIn' });
+      });
+    </script>
   </body>
 </html>
