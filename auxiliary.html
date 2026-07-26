@@ -31,8 +31,9 @@
       .status-on { background: #27ae60; color: #fff; }
       .spec-row { margin: 10px 0; }
       .spec-row span { display: inline-block; background: #fef5e7; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; margin: 2px; }
-
-      /* ===== 横向滑动 ===== */
+      .card-img-link { display: block; overflow: hidden; }
+      .card-img-link img { transition: transform 0.3s; }
+      .card-img-link:hover img { transform: scale(1.05); }
       .scroll-row {
         display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 16px;
         padding-bottom: 12px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
@@ -42,13 +43,10 @@
       .scroll-row::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
       .scroll-row::-webkit-scrollbar-thumb:hover { background: #999; }
       .scroll-row .clean-card { flex: 0 0 280px; max-width: 280px; }
-      @media (max-width: 576px) {
-        .scroll-row .clean-card { flex: 0 0 240px; max-width: 240px; }
-      }
+      @media (max-width: 576px) { .scroll-row .clean-card { flex: 0 0 240px; max-width: 240px; } }
     </style>
   </head>
   <script src="/assets/js/preloader.js"></script>
-
   <body>
     <div class="loader-wrapper">
       <div class="loader"></div>
@@ -86,7 +84,7 @@
         <div class="container">
           <div class="block-heading">
             <h2 class="text-info">🔧 周边设备</h2>
-            <p>模温机 · 碎料机 · 机械手 · 冷水机 · 干燥机 · 混色机 · 吸料机 — 注塑周边一站式供应 ← 左右滑动查看 →</p>
+            <p>模温机 · 碎料机 · 机械手 · 冷水机 · 干燥机 · 混色机 · 吸料机 — 点击图片放大查看 ← 左右滑动 →</p>
           </div>
 
           <!-- ====== 模温机 ====== -->
@@ -95,53 +93,38 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">水式模温机 6KW</h4>
-                  <div class="spec-row"><span>6KW</span><span>水温机</span><span>90°C</span></div>
-                  <p class="card-text">小型水温机，适合精密模具恒温控制，体积小巧。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/mold-heater/water-6kw/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/mold-heater/water-6kw/main.jpg" alt="水式模温机 6KW" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">水式模温机 6KW</h4><div class="spec-row"><span>6KW</span><span>水温机</span><span>90°C</span></div><p class="card-text">小型水温机，适合精密模具恒温控制，体积小巧。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">水式模温机 12KW</h4>
-                  <div class="spec-row"><span>12KW</span><span>水温机</span><span>120°C</span></div>
-                  <p class="card-text">中型水温机，适合大多数注塑模具温度控制。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/mold-heater/water-12kw/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/mold-heater/water-12kw/main.jpg" alt="水式模温机 12KW" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">水式模温机 12KW</h4><div class="spec-row"><span>12KW</span><span>水温机</span><span>120°C</span></div><p class="card-text">中型水温机，适合大多数注塑模具温度控制。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">油式模温机 18KW</h4>
-                  <div class="spec-row"><span>18KW</span><span>油温机</span><span>200°C</span></div>
-                  <p class="card-text">高温油温机，适合需要高温控温的工程塑料成型。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/mold-heater/oil-18kw/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/mold-heater/oil-18kw/main.jpg" alt="油式模温机 18KW" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">油式模温机 18KW</h4><div class="spec-row"><span>18KW</span><span>油温机</span><span>200°C</span></div><p class="card-text">高温油温机，适合需要高温控温的工程塑料成型。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">油式模温机 24KW</h4>
-                  <div class="spec-row"><span>24KW</span><span>油温机</span><span>200°C</span></div>
-                  <p class="card-text">大功率油温机，大型模具高效加热，温控精准。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/mold-heater/oil-24kw/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/mold-heater/oil-24kw/main.jpg" alt="油式模温机 24KW" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">油式模温机 24KW</h4><div class="spec-row"><span>24KW</span><span>油温机</span><span>200°C</span></div><p class="card-text">大功率油温机，大型模具高效加热，温控精准。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">双温模温机 12+12KW</h4>
-                  <div class="spec-row"><span>12+12KW</span><span>双回路</span><span>独立控温</span></div>
-                  <p class="card-text">双回路独立控温，一套设备控制两个模具温区。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/mold-heater/dual-12-12kw/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/mold-heater/dual-12-12kw/main.jpg" alt="双温模温机 12+12KW" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">双温模温机 12+12KW</h4><div class="spec-row"><span>12+12KW</span><span>双回路</span><span>独立控温</span></div><p class="card-text">双回路独立控温，一套设备控制两个模具温区。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -152,43 +135,31 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">机边粉碎机 3HP</h4>
-                  <div class="spec-row"><span>3HP</span><span>机边型</span></div>
-                  <p class="card-text">紧凑机边设计，直接回收浇口料，即碎即用。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/crusher/side-3hp/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/crusher/side-3hp/main.jpg" alt="机边粉碎机 3HP" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">机边粉碎机 3HP</h4><div class="spec-row"><span>3HP</span><span>机边型</span></div><p class="card-text">紧凑机边设计，直接回收浇口料，即碎即用。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">静音碎料机 5HP</h4>
-                  <div class="spec-row"><span>5HP</span><span>静音型</span></div>
-                  <p class="card-text">小型静音粉碎机，适合车间在线回收水口料。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/crusher/silent-5hp/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/crusher/silent-5hp/main.jpg" alt="静音碎料机 5HP" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">静音碎料机 5HP</h4><div class="spec-row"><span>5HP</span><span>静音型</span></div><p class="card-text">小型静音粉碎机，适合车间在线回收水口料。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">静音碎料机 10HP</h4>
-                  <div class="spec-row"><span>10HP</span><span>静音型</span></div>
-                  <p class="card-text">中型静音粉碎，处理能力更强，噪音低。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/crusher/silent-10hp/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/crusher/silent-10hp/main.jpg" alt="静音碎料机 10HP" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">静音碎料机 10HP</h4><div class="spec-row"><span>10HP</span><span>静音型</span></div><p class="card-text">中型静音粉碎，处理能力更强，噪音低。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">重型粉碎机 20HP</h4>
-                  <div class="spec-row"><span>20HP</span><span>重型</span></div>
-                  <p class="card-text">大功率粉碎机，适合块料、厚壁件集中粉碎。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/crusher/heavy-20hp/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/crusher/heavy-20hp/main.jpg" alt="重型粉碎机 20HP" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">重型粉碎机 20HP</h4><div class="spec-row"><span>20HP</span><span>重型</span></div><p class="card-text">大功率粉碎机，适合块料、厚壁件集中粉碎。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -199,33 +170,24 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">单臂横走机械手</h4>
-                  <div class="spec-row"><span>单臂</span><span>横走式</span><span>150T适配</span></div>
-                  <p class="card-text">经济型横走机械手，适合150吨以下注塑机配套。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/robot/single-arm/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/robot/single-arm/main.jpg" alt="单臂横走机械手" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">单臂横走机械手</h4><div class="spec-row"><span>单臂</span><span>横走式</span><span>150T适配</span></div><p class="card-text">经济型横走机械手，适合150吨以下注塑机配套。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">双臂横走机械手</h4>
-                  <div class="spec-row"><span>双臂</span><span>横走式</span><span>300T适配</span></div>
-                  <p class="card-text">双臂设计，取件+水口同时处理，效率更高。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/robot/double-arm/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/robot/double-arm/main.jpg" alt="双臂横走机械手" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">双臂横走机械手</h4><div class="spec-row"><span>双臂</span><span>横走式</span><span>300T适配</span></div><p class="card-text">双臂设计，取件+水口同时处理，效率更高。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar3.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">五轴伺服机械手</h4>
-                  <div class="spec-row"><span>5轴</span><span>伺服驱动</span><span>500T适配</span></div>
-                  <p class="card-text">高端伺服机械手，多关节灵活，适合复杂取出作业。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/robot/five-axis/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/robot/five-axis/main.jpg" alt="五轴伺服机械手" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">五轴伺服机械手</h4><div class="spec-row"><span>5轴</span><span>伺服驱动</span><span>500T适配</span></div><p class="card-text">高端伺服机械手，多关节灵活，适合复杂取出作业。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -236,43 +198,31 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">风冷式冷水机 5HP</h4>
-                  <div class="spec-row"><span>5HP</span><span>风冷</span></div>
-                  <p class="card-text">小型风冷冷水机，安装简便，适合单台注塑机配套。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/chiller/air-5hp/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/chiller/air-5hp/main.jpg" alt="风冷式冷水机 5HP" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">风冷式冷水机 5HP</h4><div class="spec-row"><span>5HP</span><span>风冷</span></div><p class="card-text">小型风冷冷水机，安装简便，适合单台注塑机配套。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">风冷式冷水机 10HP</h4>
-                  <div class="spec-row"><span>10HP</span><span>风冷</span></div>
-                  <p class="card-text">中型风冷冷水机，冷却能力强，运行稳定。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/chiller/air-10hp/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/chiller/air-10hp/main.jpg" alt="风冷式冷水机 10HP" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">风冷式冷水机 10HP</h4><div class="spec-row"><span>10HP</span><span>风冷</span></div><p class="card-text">中型风冷冷水机，冷却能力强，运行稳定。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">水冷式冷水机 15HP</h4>
-                  <div class="spec-row"><span>15HP</span><span>水冷</span></div>
-                  <p class="card-text">水冷式大功率，适合多台注塑机集中供冷。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/chiller/water-15hp/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/chiller/water-15hp/main.jpg" alt="水冷式冷水机 15HP" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">水冷式冷水机 15HP</h4><div class="spec-row"><span>15HP</span><span>水冷</span></div><p class="card-text">水冷式大功率，适合多台注塑机集中供冷。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar2.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">水冷式冷水机 30HP</h4>
-                  <div class="spec-row"><span>30HP</span><span>水冷</span></div>
-                  <p class="card-text">大型水冷机组，适合整厂集中冷却系统。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/chiller/water-30hp/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/chiller/water-30hp/main.jpg" alt="水冷式冷水机 30HP" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">水冷式冷水机 30HP</h4><div class="spec-row"><span>30HP</span><span>水冷</span></div><p class="card-text">大型水冷机组，适合整厂集中冷却系统。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -283,53 +233,38 @@
             <div class="scroll-row">
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">热风干燥机 50kg</h4>
-                  <div class="spec-row"><span>50kg</span><span>热风式</span></div>
-                  <p class="card-text">料斗式热风干燥机，简单实用，适合普通原料干燥。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/dryer/hot-50kg/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/dryer/hot-50kg/main.jpg" alt="热风干燥机 50kg" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">热风干燥机 50kg</h4><div class="spec-row"><span>50kg</span><span>热风式</span></div><p class="card-text">料斗式热风干燥机，简单实用，适合普通原料干燥。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">热风干燥机 100kg</h4>
-                  <div class="spec-row"><span>100kg</span><span>热风式</span></div>
-                  <p class="card-text">大容量干燥机，适合大批量原料干燥需求。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/dryer/hot-100kg/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/dryer/hot-100kg/main.jpg" alt="热风干燥机 100kg" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">热风干燥机 100kg</h4><div class="spec-row"><span>100kg</span><span>热风式</span></div><p class="card-text">大容量干燥机，适合大批量原料干燥需求。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">自动吸料机 300kg/h</h4>
-                  <div class="spec-row"><span>300kg/h</span><span>真空式</span></div>
-                  <p class="card-text">真空自动吸料，替代人工上料，提高生产效率。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/loader/vacuum-300/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/loader/vacuum-300/main.jpg" alt="自动吸料机 300kg/h" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">自动吸料机 300kg/h</h4><div class="spec-row"><span>300kg/h</span><span>真空式</span></div><p class="card-text">真空自动吸料，替代人工上料，提高生产效率。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">立式混色机 50kg</h4>
-                  <div class="spec-row"><span>50kg</span><span>立式</span></div>
-                  <p class="card-text">立式混色机，色母与原料均匀混合，操作简单。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/mixer/vertical-50kg/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/mixer/vertical-50kg/main.jpg" alt="立式混色机 50kg" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">立式混色机 50kg</h4><div class="spec-row"><span>50kg</span><span>立式</span></div><p class="card-text">立式混色机，色母与原料均匀混合，操作简单。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
               <div class="card text-center clean-card">
                 <span class="status-tag status-on">在售</span>
-                <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg" />
-                <div class="card-body info">
-                  <h4 class="card-title">立式混色机 100kg</h4>
-                  <div class="spec-row"><span>100kg</span><span>立式</span></div>
-                  <p class="card-text">大容量混色，适合大批量配色生产需求。</p>
-                  <a href="contact-us.html" class="btn btn-primary btn-sm">询价</a>
-                </div>
+                <a class="card-img-link" href="assets/img/machines/auxiliary/mixer/vertical-100kg/main.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/machines/auxiliary/mixer/vertical-100kg/main.jpg" alt="立式混色机 100kg" />
+                </a>
+                <div class="card-body info"><h4 class="card-title">立式混色机 100kg</h4><div class="spec-row"><span>100kg</span><span>立式</span></div><p class="card-text">大容量混色，适合大批量配色生产需求。</p><a href="contact-us.html" class="btn btn-primary btn-sm">询价</a></div>
               </div>
             </div>
           </div>
@@ -360,5 +295,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+      document.querySelectorAll('.scroll-row').forEach(function(row) {
+        baguetteBox.run(row, { captions: false, animation: 'slideIn' });
+      });
+    </script>
   </body>
 </html>
