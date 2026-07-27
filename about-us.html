@@ -83,7 +83,9 @@
           <div class="row justify-content-center">
             <div class="col-sm-6 col-lg-3">
               <div class="card text-center clean-card">
-                <img class="card-img-top w-100 d-block" src="assets/img/office/warehouse.jpg" alt="仓库全景" />
+                <a href="assets/img/company/warehouse-1.jpg">
+                  <img class="card-img-top w-100 d-block" src="assets/img/company/warehouse-1.jpg" />
+                  </a>
                 <div class="card-body info">
                   <h4 class="card-title">仓库全景</h4>
                   <p class="card-text">现货仓储，机器整齐排放</p>
@@ -222,5 +224,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script>
+      baguetteBox.run('.clean-card', { captions: false, animation: 'slideIn' });
+    </script>
+
   </body>
 </html>
