@@ -1,1 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- ==================== 1. 首页 ==================== -->
+  <url>
+    <loc>https://company-website-templete.vercel.app/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 
+  <!-- ==================== 2. 关于我们 ==================== -->
+  <url>
+    <loc>https://company-website-templete.vercel.app/about-us.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== 3. 联系我们 ==================== -->
+  <url>
+    <loc>https://company-website-templete.vercel.app/contact-us.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ==================== 4. 日本注塑机产品页 ==================== -->
+  <url>
+    <loc>https://company-website-templete.vercel.app/japan.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==================== 5. 德国+韩国注塑机产品页 ==================== -->
+  <url>
+    <loc>https://company-website-templete.vercel.app/germany-korea.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==================== 6. 三机一体产品页 ==================== -->
+  <url>
+    <loc>https://company-website-templete.vercel.app/3in1.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==================== 7. 周边辅助设备页 ==================== -->
+  <url>
+    <loc>https://company-website-templete.vercel.app/auxiliary.html</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
